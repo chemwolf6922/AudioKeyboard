@@ -216,7 +216,7 @@ public class MainActivity extends AppCompatActivity {
     final int DICT_SIZE = 10000;
     //read dict from file
     public void initDict(){
-        BufferedReader reader = new BufferedReader(new InputStreamReader(getResources().openRawResource(R.raw.dict)));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(getResources().openRawResource(R.raw.pydict)));
         String line;
         try{
             int lineNo = 0;
@@ -483,6 +483,7 @@ public class MainActivity extends AppCompatActivity {
         if (ch != KEY_NOT_FOUND){
             if (seq.size() == 0 || seq.get(seq.size() - 1) != ch) {
                 //make a vibrate
+
                 Vibrator vibrator =  (Vibrator)getApplicationContext().getSystemService(Context.VIBRATOR_SERVICE);
                 long[] pattern = {0, 30};
                 vibrator.vibrate(pattern, -1);
